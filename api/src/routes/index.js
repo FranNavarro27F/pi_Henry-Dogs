@@ -37,12 +37,14 @@ router.get("/dogs/:id", async (req, res)=> {
 
 router.post("/dogs", async (req, res)=>{
     try {
-        let {img, name, height, weight, life_span, temperament}=req.body;
+        let {img, name, height_min, height_max, weight_min, weight_max, life_span, temperament}=req.body;
         let newDog= await Dog.create({
             img: img,
             name: name,
-            height: height,
-            weight: weight,
+            height_min: height_min,
+            height_max: height_max,
+            weight_min: weight_min,
+            weight_max: weight_max,
             life_span: life_span
         });
         await newDog.addTemperaments(temperament);
