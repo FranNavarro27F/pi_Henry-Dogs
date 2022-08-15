@@ -1,0 +1,24 @@
+
+
+/* .fondo {
+    
+    background-image: url("../img/landing1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+   
+  }
+  #buttos-landing{
+    margin-top:8rem ;
+    padding: 10px 65px;
+  
+  } */
+
+  .landing{
+    background-image: url("../img/w1.jpg");
+    height: 100vh;
+    
+  }
