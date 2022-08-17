@@ -41,8 +41,17 @@ export default function Create() {
 
   function handleSubmit(e){
     e.preventDefault();
-    dispatch(createDog(estado))
-
+    dispatch(createDog(estado));
+    setEstado({
+      name:"",
+    weight_min:"",
+    weight_max:"",
+    height_min:"",
+    height_max:"",
+    life_span:"",
+    img:"",
+    temperament:[]
+    });
   }
 
 
@@ -50,6 +59,8 @@ export default function Create() {
   return (
     <div>
       <div><NavBar /></div>
+    <br/>
+    <br/>
 
     <form  onSubmit={(e)=>{handleSubmit(e)}}>
 

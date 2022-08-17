@@ -10,9 +10,11 @@ import { getDogs, setCurPage } from '../redux/actions.js';
 import { Link } from 'react-router-dom';
 import Card from "./Card.jsx";
 import Paginado from "./Paginado.jsx";
+import { useState } from "react";
 
 
 export default function Home() {
+  
   let dispatch= useDispatch();
   let dogs=useSelector(state=> state.dogs);
   let curPage=useSelector(state=> state.curPage)
@@ -24,31 +26,35 @@ export default function Home() {
   const paginado=(numPage)=>{
     dispatch(setCurPage(numPage))
   };
-
   useEffect(()=>{
-    dispatch(getDogs())
+    dispatch(getDogs());
   },[dispatch]);
-
+  let [refresh, setRefresh]=useState("")
 
 
   return (
-    <div>
+    <div id={"Home"}>
       <div>
         <NavBar/>
       </div>
-      <div>
-        <SearchBar/>
+      <div id={"optiondBar"}>
+        <div id={"Orders"}>
+          <Orders setRefresh={setRefresh} />
+        </div>
+        <div id={"HsearchBar"}>
+          <SearchBar/>
+        </div>
+        <div id={"Filters"}>
+          <Filters/>
+        </div>
       </div>
-      <div>
-        <Orders/>
-      </div>
-      <div>
-        <Filters/>
-      </div>
-    <br/>
+      
+      
+
       <div id="greed">
         {
           currentDogs?.map(cur=> {
+            
             return(
               <div key={cur.id+Math.random()*2000}>
                 <Link to={`/detail/${cur.id}`}>
@@ -69,14 +75,15 @@ export default function Home() {
 
         }
       </div>
-      <div>
+      
+      <div id={"Paginado"}>
         <Paginado 
         dogsPerPage={dogsPerPage}
         allDogs={dogs.length}
         paginado={paginado}
         />
       </div>
-
+     
 
     </div>
   )

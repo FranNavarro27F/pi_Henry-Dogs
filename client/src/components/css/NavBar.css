@@ -12,11 +12,3 @@
     margin-left: 3rem;
     margin-right: 3rem;
 }
-#nav ul li a{
-    
-    text-decoration: none; 
-    padding: 10px;  
-}
-#nav ul li a:hover{
-    background-color: rgb(235, 8, 8);
-}

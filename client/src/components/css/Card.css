@@ -1,23 +1,21 @@
 .card {
-    width: 17rem;
-    height: rem;
-    background: lightgrey;
+    width: 15rem;
     border: 3px inset white;
-    background: #e8e8e8;
-    box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+    background: #c9ae7d;
     transition: all .5s ease-in-out;
     border-radius: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bolder;
+    /* font-weight: bolder; */
+
     color: #8a8989;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
   }
   
   .card:hover {
     transform: translateY(-5px);
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
   }
 
   .card img{
@@ -25,11 +23,10 @@
     margin-top: 0.7rem;
     height: 6.5rem;
     width: 10rem;
-    
   }
 
   #datos{
-    font-size: small;
+    font-size: 60.85%;
   }
 
   #datos ul li{

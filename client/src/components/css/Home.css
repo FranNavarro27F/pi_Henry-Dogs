@@ -1,7 +1,36 @@
+#Home{
+    background-color: rgb(241, 237, 213);
+}
+
 #greed {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
-    }
+    margin-top: 1rem;
+}
+#HsearchBar{
+    display: inline;
+    position: relative;
+}
+
+#Paginado{
+    display: inline;
+    
+}
+
+#optiondBar{
+    background-color: hwb(32 76% 0%);
+    border-style:outset;
+    border-radius: 1rem;
+    
+    display:flex;
+    justify-content: space-around;
+
+}
+
+/* #Orders{
+    display: flex;
+    justify-content: space-around;
+} */

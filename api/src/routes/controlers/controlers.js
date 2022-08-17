@@ -38,12 +38,17 @@ const getDogs= async ()=>{
 
     let dogs= (await axios.get(`https://api.thedogapi.com/v1/breeds`)).data;
     let cards_dogs= prepDogCard(dogs);
+
+    let concatFiltNullWeight1= cards_dogs.filter(cur=> cur.weight_min >= 1 && cur.weight_max >= 1);
+
     if(card_db_dogs.length!==0){
-        let concat= card_db_dogs.concat(cards_dogs);
-        
-        return concat;
+        let concated= card_db_dogs.concat(cards_dogs);
+
+        let concatFiltNullWeight= concated.filter(cur=> cur.weight_min >= 1 && cur.weight_max >= 1);
+
+        return concatFiltNullWeight;
     }else{
-        return cards_dogs;
+        return concatFiltNullWeight1;
     }
 }
 

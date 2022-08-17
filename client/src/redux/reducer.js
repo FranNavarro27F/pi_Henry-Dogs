@@ -31,7 +31,85 @@ export default function rootReducer(state= initialState, action) {
                 ...state,
                 dogs: [...state.dogs, action.payload]
             }
+        case "SEARCH_NAME":
+            return{
+                ...state,
+                dogs:action.payload
+            }
+        case "ORDER_NAME":
+            let auxDogs1=[...state.allDogs];
 
+            if(action.payload=== "a-z"){
+                return{
+                    ...state,
+                    dogs: auxDogs1.sort((a,b)=>{
+                        if(a.name.toLowerCase() < b.name.toLowerCase()){
+                            return -1;
+                        }
+                        if(a.name.toLowerCase() > b.name.toLowerCase()){
+                            return 1;
+                        }
+                        return 0;
+                    })
+                }
+            }
+            if(action.payload=== "z-a"){
+                return{
+                    ...state,
+                    dogs: auxDogs1.sort((a,b)=>{
+                        if(a.name.toLowerCase() < b.name.toLowerCase()){
+                            return 1;
+                        }
+                        if(a.name.toLowerCase() > b.name.toLowerCase()){
+                            return -1;
+                        }
+                        return 0;
+                    })
+                }
+            }
+            return {
+                ...state,
+                dogs: state.allDogs
+            }
+        case "ORDER_WEIGHT":
+            let auxDogs2=[...state.allDogs];
+            let average=(weight_min, weight_max)=>{
+                return (weight_min + weight_max)/2
+            }
+        
+            if(action.payload=== "min_weight"){
+                return{
+                    ...state,
+                    dogs: auxDogs2.sort((a,b)=>{
+                        if(average(a.weight_min, a.weight_max) < average(b.weight_min, b.weight_max)){
+                            return -1;
+                        }
+                        if(average(a.weight_min, a.weight_max) > average(b.weight_min, b.weight_max)){
+                            return 1;
+                        }
+                        return 0;
+                    })
+                }
+            }
+            if(action.payload=== "max_weight"){
+                return{
+                    ...state,
+                    dogs: auxDogs2.sort((a,b)=>{
+                        if(average(a.weight_min, a.weight_max) < average(b.weight_min, b.weight_max)){
+                            return 1;
+                        }
+                        if(average(a.weight_min, a.weight_max) > average(b.weight_min, b.weight_max)){
+                            return -1;
+                        }
+                        return 0;
+                    })
+                }
+            }
+            return{
+                ...state,
+                dogs: state.allDogs
+            }    
+        
 
         default:
             return state;

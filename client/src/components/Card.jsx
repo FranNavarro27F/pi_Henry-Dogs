@@ -3,6 +3,8 @@ import "./css/Card.css";
 
 
 export default function Card({img, id, name, weight_min, weight_max, temperament}) {
+  let temp= temperament?.slice(0,3)
+  
   return (
     <div className={"card"}>
       <div >
@@ -16,7 +18,7 @@ export default function Card({img, id, name, weight_min, weight_max, temperament
           </ul>  
           <ol>
             {
-              temperament?.map((cur, index)=> {
+              temp?.map((cur, index)=> {
                return(
                  <li key={id+index}>{cur}</li>
                )

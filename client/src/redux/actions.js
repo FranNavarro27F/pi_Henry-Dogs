@@ -31,12 +31,42 @@ export function getTemperaments(){
 
 export function createDog(input){
     return async function (dispatch){
-        console.log(input)
         let newDog= (await axios.post("http://localhost:3001/dogs", input)).data;
-        console.log(newDog)
         return dispatch({
             type:"CREATE_DOG",
             payload: newDog
+        })
+    }
+};
+
+export function findName(name){
+    return async function (dispatch){
+        try {
+            let faundByName= (await axios.get(`http://localhost:3001/dogs?name=${name}`)).data;
+            return dispatch({
+                type:"SEARCH_NAME",
+                payload: faundByName
+            })
+        } catch (e) {
+            console.log(e.request.response)
+        }
+    }
+};
+
+export function orderByName(order){
+    return function (dispatch){
+        return dispatch({
+            type:"ORDER_NAME",
+            payload: order
+        })
+    }
+};
+
+export function orderByWeight(order){
+    return function dispatch(dispatch){
+        return dispatch({
+            type:"ORDER_WEIGHT",
+            payload: order
         })
     }
 }
