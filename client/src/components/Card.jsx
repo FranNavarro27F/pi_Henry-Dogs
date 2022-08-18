@@ -12,8 +12,8 @@ export default function Card({img, id, name, weight_min, weight_max, temperament
         <div id={"datos"}>
           <ul>
             <li>name: {name}</li>
-            <li>minimum weight: {weight_min}</li>
-            <li>maximum weight: {weight_max}</li>
+            <li>minimum weight: {weight_min} kg</li>
+            <li>maximum weight: {weight_max} kg</li>
             <li>temperament: </li>
           </ul>  
           <ol>

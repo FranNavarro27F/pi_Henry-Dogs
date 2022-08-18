@@ -53,6 +53,20 @@ export function findName(name){
     }
 };
 
+export function getDetail(id){
+    return async function (dispatch){
+        try {
+            let findID= (await axios.get(`http://localhost:3001/dogs/${id}`)).data;
+            return dispatch({
+                type:"GET_ID",
+                payload: findID
+            })
+        } catch (e) {
+            console.log(e.request.response)
+        }
+    }
+}
+
 export function orderByName(order){
     return function (dispatch){
         return dispatch({
@@ -67,6 +81,33 @@ export function orderByWeight(order){
         return dispatch({
             type:"ORDER_WEIGHT",
             payload: order
+        })
+    }
+};
+
+export function filtTemp(temp){
+    return function (dispatch){
+        return dispatch({
+            type:"FILT_TEMPERAMENT",
+            payload: temp
+        })
+    }
+};
+
+export function filtCreated(CoN){
+    return function (dispatch){
+        return dispatch({
+            type:"FILT_CREATED",
+            payload: CoN
+        })
+    }
+};
+
+export function cleanDetail(){
+    return function (dispatch){
+        return dispatch({
+            type:"CLEAN_DETAIL",
+            payload:{}
         })
     }
 }

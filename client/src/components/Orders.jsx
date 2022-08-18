@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {  orderByName, orderByWeight, setCurPage } from '../redux/actions';
 import "./css/Orders.css";
@@ -14,13 +13,13 @@ export default function Orders({setRefresh}) {
     dispatch(orderByName(e.target.value));
     dispatch(setCurPage(1));
     setRefresh(e.target.value);
-    e.target.value="";
+    // e.target.value="";
   };
   function handleChangeW(e){
     dispatch(orderByWeight(e.target.value));
     dispatch(setCurPage(1));
     setRefresh(e.target.value);
-  
+    // e.target.value="";
   };
 
   return (

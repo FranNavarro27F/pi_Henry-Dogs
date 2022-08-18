@@ -3,7 +3,10 @@ const initialState={
     dogs:[],
     allDogs:[],
     curPage: 1,
-    temperaments:[]
+    temperaments:[],
+    detail:{},
+    loader:false,
+    error:false,
 };
 
 export default function rootReducer(state= initialState, action) {
@@ -109,7 +112,29 @@ export default function rootReducer(state= initialState, action) {
                 ...state,
                 dogs: state.allDogs
             }    
-        
+        case "FILT_TEMPERAMENT":
+            let auxDogs3=[...state.allDogs];
+            return{
+                ...state,
+                dogs: action.payload==="default"?state.allDogs:auxDogs3.filter(cur=> cur.temperament?.includes(action.payload))
+            }
+        case "FILT_CREATED":
+            let auxDogs4=[...state.allDogs];
+            return{
+                ...state,
+                dogs: action.payload==="default"?state.allDogs:action.payload==="db"?auxDogs4.filter(cur=> isNaN(cur.id)):auxDogs4.filter(cur=> !isNaN(cur.id)) 
+            }
+        case "GET_ID":
+            return{
+                ...state,
+                detail: action.payload
+            }
+        case "CLEAN_DETAIL":
+            return{
+                ...state,
+                detail: action.payload
+            }
+
 
         default:
             return state;

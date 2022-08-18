@@ -1,5 +1,5 @@
 import "./css/Home.css";
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from "./NavBar.jsx";
 import SearchBar from "./SearchBar.jsx";
 import Orders from './Orders.jsx';
@@ -10,14 +10,17 @@ import { getDogs, setCurPage } from '../redux/actions.js';
 import { Link } from 'react-router-dom';
 import Card from "./Card.jsx";
 import Paginado from "./Paginado.jsx";
-import { useState } from "react";
+import Loader from "./Loader";
+import Message from "./Message";
 
 
 export default function Home() {
-  
+
   let dispatch= useDispatch();
   let dogs=useSelector(state=> state.dogs);
-  let curPage=useSelector(state=> state.curPage)
+  let curPage=useSelector(state=> state.curPage);
+  let loader=useSelector(state=> state.loader);
+  let error=useSelector(state=> state.error);
 
   const dogsPerPage= 8;
   const indexOfLastDog= curPage * dogsPerPage;
@@ -34,25 +37,21 @@ export default function Home() {
 
   return (
     <div id={"Home"}>
-      <div>
-        <NavBar/>
-      </div>
+
+      <div><NavBar/></div>
+
       <div id={"optiondBar"}>
-        <div id={"Orders"}>
-          <Orders setRefresh={setRefresh} />
-        </div>
-        <div id={"HsearchBar"}>
-          <SearchBar/>
-        </div>
-        <div id={"Filters"}>
-          <Filters/>
-        </div>
+        <div id={"Orders"}><Orders setRefresh={setRefresh}/></div>
+        <div id={"HsearchBar"}><SearchBar/></div>
+        <div id={"Filters"}><Filters/></div>
       </div>
-      
-      
+
+      {/* {loader && <Loader/>}
+      {error && <Message/>} */}
 
       <div id="greed">
-        {
+        { 
+
           currentDogs?.map(cur=> {
             
             return(
@@ -66,13 +65,12 @@ export default function Home() {
                     weight_min={cur.weight_min}
                     weight_max={cur.weight_max}
                     temperament={cur.temperament}
-
                   />
                 </Link>
               </div>
             )
           })
-
+          
         }
       </div>
       
@@ -83,6 +81,7 @@ export default function Home() {
         paginado={paginado}
         />
       </div>
+     
      
 
     </div>
