@@ -39,8 +39,13 @@ export default function Create() {
     })
   };
 
+  function inspect(){
+
+  }
+
   function handleSubmit(e){
     e.preventDefault();
+
     dispatch(createDog(estado));
     setEstado({
       name:"",
@@ -66,46 +71,60 @@ export default function Create() {
 
       <div>
         <label>name: </label>
-        <input type="text" name={"name"} value={estado.name} 
+        <input placeholder={"ej: Dogo"} type="text" name={"name"} value={estado.name} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <label>❌ ✅</label>
       </div>
+      <br/>
       <div>
         <label>weight_min: </label>
-        <input type={"number"} name={"weight_min"} value={estado.weight_min} 
+        <input placeholder={"ej: 5"} type={"number"} name={"weight_min"} value={estado.weight_min} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <i> kg</i>
       </div>
+      <br/>
       <div>
         <label>weight_max: </label>
-        <input type={"number"} name={"weight_max"} value={estado.weight_max} 
+        <input placeholder={"ej: 20"} type={"number"} name={"weight_max"} value={estado.weight_max} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <i> kg</i>
       </div>
+      <br/>
       <div>
         <label>height_min: </label>
-        <input type={"number"} name={"height_min"} value={estado.height_min} 
+        <input placeholder={"ej: 38"} type={"number"} name={"height_min"} value={estado.height_min} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <i> cm</i>
       </div>
+      <br/>
       <div>
         <label>height_max: </label>
-        <input type={"number"} name={"height_max"} value={estado.height_max} 
+        <input placeholder={"ej: 56"} type={"number"} name={"height_max"} value={estado.height_max} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <i> cm</i>
       </div>
+      <br/>
       <div>
         <label>life_span: </label>
-        <input type="text" name={"life_span"} value={estado.life_span} 
+        <input placeholder={"ej: 10 - 12 years"} type="text" name={"life_span"} value={estado.life_span} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <i> years</i>
       </div>
+      <br/>
       <div>
         <label>img: </label>
-        <input type="text" name={"img"} value={estado.img} 
+        <input placeholder={"ej: http://mi_imagen.jpg"} type="text" name={"img"} value={estado.img} 
         onChange={(e)=>{handleChange(e)}}
         />
+        <i> url</i>
       </div>
+      <br/>
         <label>Temperament: </label>
       <select onChange={(e)=>{handleSelect(e)}} >
         {

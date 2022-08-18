@@ -5,8 +5,8 @@ const initialState={
     curPage: 1,
     temperaments:[],
     detail:{},
-    loader:false,
-    error:false,
+    loader:true,
+    error:null,
 };
 
 export default function rootReducer(state= initialState, action) {
@@ -17,7 +17,8 @@ export default function rootReducer(state= initialState, action) {
             return{
                 ...state,
                 dogs:action.payload,
-                allDogs:action.payload
+                allDogs:action.payload,
+                loader:false,
             }
         case "SET_PAGE":
             return{

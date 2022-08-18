@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { cleanDetail, getDetail } from "../redux/actions";
+import Loader from './Loader';
 import NavBar from './NavBar'
 
 export default function Detail() {
@@ -16,7 +17,7 @@ export default function Detail() {
   },[dispatch, id]);
   let detail= useSelector((state)=> state.detail);
 
-  return (
+  return !detail.img?<Loader/>:(
     <div>
       <NavBar/>
       <div>

@@ -1,5 +1,5 @@
 #Home{
-    background-color: rgb(241, 237, 213);
+    /* background-color: rgb(241, 237, 213); */
 }
 
 #greed {
@@ -17,6 +17,9 @@
 
 #Paginado{
     display: inline;
+    position: absolute;
+    top: 39rem;
+    left: 18rem;
     
 }
 

@@ -19,6 +19,7 @@ export default function Home() {
   let dispatch= useDispatch();
   let dogs=useSelector(state=> state.dogs);
   let curPage=useSelector(state=> state.curPage);
+
   let loader=useSelector(state=> state.loader);
   let error=useSelector(state=> state.error);
 
@@ -34,8 +35,11 @@ export default function Home() {
   },[dispatch]);
   let [refresh, setRefresh]=useState("")
 
+  
 
-  return (
+
+  return(
+    
     <div id={"Home"}>
 
       <div><NavBar/></div>
@@ -52,7 +56,7 @@ export default function Home() {
       <div id="greed">
         { 
 
-          currentDogs?.map(cur=> {
+          currentDogs?currentDogs.map(cur=> {
             
             return(
               <div key={cur.id+Math.random()*2000}>
@@ -69,7 +73,7 @@ export default function Home() {
                 </Link>
               </div>
             )
-          })
+          }): <Loader/>
           
         }
       </div>
