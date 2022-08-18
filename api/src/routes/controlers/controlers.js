@@ -91,9 +91,9 @@ const getIdBreeds= async (id)=>{
         if(filt.length===0){
             throw new Error("did not find a breed of dog with the indicated ID");
         }else{
-            return filt;
+            return filt[0];
         }
-    }
+    } 
 }
 
 const getTemperaments= async ()=>{
