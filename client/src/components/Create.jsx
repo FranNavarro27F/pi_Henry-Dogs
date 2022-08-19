@@ -13,7 +13,8 @@ export default function Create() {
   useEffect(()=>{
     dispatch(getTemperaments());
   },[dispatch])
-
+  
+  let [error, setError]=useState({});
   let [estado, setEstado]=useState({
     name:"",
     weight_min:"",
@@ -29,6 +30,10 @@ export default function Create() {
     setEstado({
         ...estado,
         [e.target.name]: e.target.value
+    });
+    inspector({
+      ...estado,
+      [e.target.name]: e.target.value
     })
   };
 
@@ -39,8 +44,25 @@ export default function Create() {
     })
   };
 
-  function inspect(){
-
+  function inspector(input){
+    let error={};
+    // name
+    if(input.name?.length=== 0){
+      error.name="the name cannot be empty";
+    }else if(input.name?.length >= 25 || input.name.length <= 1){
+      error.name="must contain more than 1 character and less than 25";
+    }else if(!/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(input.name)){
+      error.name="only lowercase letters, uppercase letters, includes accents but with spaces included";
+    }//-------
+    // weight_min
+    if(input.weight_min < 0 || input.weight_min >= 60 ){
+      error.weight_min="only positive numbers less than 60";
+    }//-------
+    if(input.weight_max <= 1 || input.weight_max >= 96){
+      error.weight_max="only positive numbers greater than 1 and less than 96";
+    }
+    
+    setError(error)
   }
 
   function handleSubmit(e){
@@ -74,7 +96,10 @@ export default function Create() {
         <input placeholder={"ej: Dogo"} type="text" name={"name"} value={estado.name} 
         onChange={(e)=>{handleChange(e)}}
         />
-        <label>❌ ✅</label>
+        {/* <label>❌ ✅</label> */}
+        <p>{error.name && error.name}</p>
+        
+       
       </div>
       <br/>
       <div>
@@ -83,6 +108,7 @@ export default function Create() {
         onChange={(e)=>{handleChange(e)}}
         />
         <i> kg</i>
+        <p>{error.weight_min && error.weight_min}</p>
       </div>
       <br/>
       <div>
@@ -91,6 +117,7 @@ export default function Create() {
         onChange={(e)=>{handleChange(e)}}
         />
         <i> kg</i>
+        <p>{error.weight_max}</p>
       </div>
       <br/>
       <div>
