@@ -33,6 +33,7 @@ export default function Orders({setRefresh}) {
           <option value={"z-a"}>Descendent</option>
         </select> 
       </div>
+      <br/>
       <div>
         <label>{"Order by weight:"}</label>
         <select onChange={(e)=>{handleChangeW(e)}}>

@@ -55,11 +55,23 @@ export default function Create() {
       error.name="only lowercase letters, uppercase letters, includes accents but with spaces included";
     }//-------
     // weight_min
-    if(input.weight_min < 0 || input.weight_min >= 60 ){
+    if(input.weight_min <= 0 || input.weight_min >= 60){
       error.weight_min="only positive numbers less than 60";
     }//-------
+    // weight_max
     if(input.weight_max <= 1 || input.weight_max >= 96){
       error.weight_max="only positive numbers greater than 1 and less than 96";
+    }//-------
+    // height_min
+    if(input.height_min <= 0 || input.height_min > 65){
+      error.height_min="only positive numbers greater than 0 and less than 65";
+    }//-------
+    //height_max
+    if(input.height_max < 20 || input.height_max > 80){
+      error.height_max="only positive numbers greater than 19 and less than 80";
+    }//--------
+    if(input.life_span?.length === 0){
+      error.life_span="life_span cannot be empty"; 
     }
     
     setError(error)
@@ -98,8 +110,6 @@ export default function Create() {
         />
         {/* <label>❌ ✅</label> */}
         <p>{error.name && error.name}</p>
-        
-       
       </div>
       <br/>
       <div>
@@ -117,7 +127,7 @@ export default function Create() {
         onChange={(e)=>{handleChange(e)}}
         />
         <i> kg</i>
-        <p>{error.weight_max}</p>
+        <p>{error.weight_max && error.weight_max}</p>
       </div>
       <br/>
       <div>
@@ -126,6 +136,7 @@ export default function Create() {
         onChange={(e)=>{handleChange(e)}}
         />
         <i> cm</i>
+        <p>{error.height_min && error.height_min}</p>
       </div>
       <br/>
       <div>
@@ -134,15 +145,20 @@ export default function Create() {
         onChange={(e)=>{handleChange(e)}}
         />
         <i> cm</i>
+        <p>{error.height_max && error.height_max}</p>
       </div>
       <br/>
       <div>
         <label>life_span: </label>
-        <input placeholder={"ej: 10 - 12 years"} type="text" name={"life_span"} value={estado.life_span} 
-        onChange={(e)=>{handleChange(e)}}
-        />
+        <select>
+          <option disabled selected >select a Life span</option>
+          <option value={"6 - 8"}>6 - 8</option>
+          <option value={"8 - 10"}>8 - 10</option>
+          <option value={"10 - 14"}>10 - 14</option>
+          <option value={"14 - 18"}>14 - 18</option>
+        </select>
         <i> years</i>
-      </div>
+      </div> 
       <br/>
       <div>
         <label>img: </label>
@@ -154,6 +170,7 @@ export default function Create() {
       <br/>
         <label>Temperament: </label>
       <select onChange={(e)=>{handleSelect(e)}} >
+        <option disabled selected>select some temperaments</option>
         {
           temperaments?.map(cur=>{
             return (
@@ -165,7 +182,8 @@ export default function Create() {
       </select>
       <div>
       <br/>
-        <input type={"submit"} value={"Create!"}/>
+      {/* disabled={error && "disabled"} */}
+        <input  type={"submit"} value={"Create!"}/>
       </div>
     </form>
 

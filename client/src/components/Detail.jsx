@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { cleanDetail, getDetail } from "../redux/actions";
 import Loader from './Loader';
-import NavBar from './NavBar'
+import NavBar from './NavBar';
+import "./css/Detail.css";
 
 export default function Detail() {
   let dispatch=useDispatch();
@@ -18,10 +19,10 @@ export default function Detail() {
   let detail= useSelector((state)=> state.detail);
 
   return !detail.img?<Loader/>:(
-    <div>
+    <div id={"detail"}>
       <NavBar/>
-      <div>
-        <div><img src={detail.img} alt={"imagen"} /></div>
+      <div id={"info_detail"}>
+        <div id={"img_div"}><img src={detail.img} alt={"imagen"} /></div>
         <div><h3>Name: {detail.name}</h3></div>
         <div><h3>Weight_min: {detail.weight_min} kg</h3></div>
         <div><h3>Weight_max: {detail.weight_max} kg</h3></div>

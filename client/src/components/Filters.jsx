@@ -32,6 +32,7 @@ export default function Filters() {
           <option value="api">Not</option>
         </select>
       </div>
+      <br/>
       <div>
         <label >Filt by Temperament:</label>
         <select onChange={(e)=>{handleChange(e)}}>

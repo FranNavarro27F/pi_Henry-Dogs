@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getDogs(){
     return async function (dispatch){
-        let dogs= (await axios.get("http://localhost:3001/dogs")).data;
+        let dogs= (await axios.get(`/dogs`)).data;
         return dispatch({
             type:"GET_DOGS",
             payload: dogs
@@ -21,7 +21,7 @@ export function setCurPage(num){
 
 export function getTemperaments(){
     return async function (dispatch){
-        let temperaments= (await axios.get("http://localhost:3001/temperaments")).data;
+        let temperaments= (await axios.get(`/temperaments`)).data;
         return dispatch({
             type:"GET_TEMPERAMENTS",
             payload: temperaments
@@ -31,7 +31,7 @@ export function getTemperaments(){
 
 export function createDog(input){
     return async function (dispatch){
-        let newDog= (await axios.post("http://localhost:3001/dogs", input)).data;
+        let newDog= (await axios.post(`/dogs`, input)).data;
         return dispatch({
             type:"CREATE_DOG",
             payload: newDog
@@ -42,7 +42,7 @@ export function createDog(input){
 export function findName(name){
     return async function (dispatch){
         try {
-            let faundByName= (await axios.get(`http://localhost:3001/dogs?name=${name}`)).data;
+            let faundByName= (await axios.get(`/dogs?name=${name}`)).data;
             return dispatch({
                 type:"SEARCH_NAME",
                 payload: faundByName
@@ -56,7 +56,7 @@ export function findName(name){
 export function getDetail(id){
     return async function (dispatch){
         try {
-            let findID= (await axios.get(`http://localhost:3001/dogs/${id}`)).data;
+            let findID= (await axios.get(`/dogs/${id}`)).data;
             return dispatch({
                 type:"GET_ID",
                 payload: findID

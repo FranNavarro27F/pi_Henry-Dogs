@@ -1,0 +1,15 @@
+
+#info_detail div img{
+    position:absolute;
+    top: 1rem;
+    left: 30rem;
+
+    width: 47rem;
+    height: 33rem;
+}
+
+#info_detail{
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+}
