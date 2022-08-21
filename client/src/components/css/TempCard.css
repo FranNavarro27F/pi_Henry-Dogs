@@ -1,0 +1,35 @@
+
+
+
+#tempCard{
+    border-radius: 0.5rem;
+    border-style:ridge;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:  rgba(96, 96, 81, 0.598);
+    height: 2.4rem;
+    width: 5rem;
+}
+
+#tempCard button{
+    font-size: 40%;
+    height: 90%;
+    width: 28%;
+}
+
+#but{
+    width: 4.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#text{
+    
+    font-size:70%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    display: flex;
+    justify-content: center;
+    width: 4.5rem;
+}

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import NavBar from './NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { createDog, getTemperaments } from '../redux/actions';
+import TempCard from './TempCard';
+import "./css/Create.css";
 
 export default function Create() {
 
@@ -36,13 +38,22 @@ export default function Create() {
       [e.target.name]: e.target.value
     })
   };
-
+  
   function handleSelect(e){
     setEstado({
         ...estado,
         temperament: [...estado.temperament, e.target.value]
     })
   };
+
+  function handleLife_span(e){
+    setEstado({
+      ...estado,
+      life_span: e.target.value
+    })
+  };
+
+ 
 
   function inspector(input){
     let error={};
@@ -93,6 +104,7 @@ export default function Create() {
     });
   }
 
+ 
 
 
   return (
@@ -150,7 +162,7 @@ export default function Create() {
       <br/>
       <div>
         <label>life_span: </label>
-        <select>
+        <select onChange={(e)=>handleLife_span(e)}>
           <option disabled selected >select a Life span</option>
           <option value={"6 - 8"}>6 - 8</option>
           <option value={"8 - 10"}>8 - 10</option>
@@ -168,18 +180,28 @@ export default function Create() {
         <i> url</i>
       </div>
       <br/>
-        <label>Temperament: </label>
-      <select onChange={(e)=>{handleSelect(e)}} >
-        <option disabled selected>select some temperaments</option>
+      <div>
+          <label>Temperament: </label>
+        <select onChange={(e)=>{handleSelect(e)}} >
+          <option disabled selected>select some temperaments</option>
+          {
+            temperaments?.map(cur=>{
+              return (
+                <option key={cur.id} value={cur.id}>{cur.name}</option>
+              )
+            })
+          }
+        </select>
+        <div id={"container_temps_card"}>
         {
-          temperaments?.map(cur=>{
-            return (
-              <option key={cur.id} value={cur.id}>{cur.name}</option>
-            )
+          estado.temperament?.map(curID=>{
+            return <TempCard key={curID} temp={temperaments[curID-1].name} id={curID} estado={estado} setEstado={setEstado}/>
           })
         }
-      
-      </select>
+
+        </div>
+      </div>
+     
       <div>
       <br/>
       {/* disabled={error && "disabled"} */}

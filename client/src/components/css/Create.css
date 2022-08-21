@@ -1,0 +1,13 @@
+#container_temps_card{
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    height: 6rem;
+    margin-top: 1rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    background-color:antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
