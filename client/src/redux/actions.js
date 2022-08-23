@@ -48,7 +48,7 @@ export function findName(name){
                 payload: faundByName
             })
         } catch (e) {
-            console.log(e.request.response)
+            alert(e.request.response)
         }
     }
 };

@@ -31,8 +31,10 @@ export default function Home() {
     dispatch(setCurPage(numPage))
   };
   useEffect(()=>{
-    dispatch(getDogs());
-  },[dispatch]);
+    if(!dogs.length){
+      dispatch(getDogs());
+    }
+  },[dispatch, dogs]);
   let [refresh, setRefresh]=useState("")
 
   

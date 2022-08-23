@@ -1,7 +1,7 @@
 import React from 'react';
 import "./css/TempCard.css";
 
-export default function TempCard({temp, setEstado, id, estado}) {
+export default function TempCard({temp, setEstado, id, estado, inspector}) {
     
     let idTemp=id;
 
@@ -9,6 +9,10 @@ export default function TempCard({temp, setEstado, id, estado}) {
         setEstado({
             ...estado,
             temperament:estado.temperament.filter(cur=> cur !== id)
+        })
+        inspector({
+          ...estado,
+          temperament:estado.temperament.filter(cur=> cur !== id)
         })
    }
 
