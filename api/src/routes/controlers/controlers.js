@@ -40,6 +40,7 @@ const getDogs= async ()=>{
     let cards_dogs= prepDogCard(dogs);
 
     let concatFiltNullWeight1= cards_dogs.filter(cur=> cur.weight_min >= 1 && cur.weight_max >= 1);
+    
 
     if(card_db_dogs.length!==0){
         let concated= card_db_dogs.concat(cards_dogs);

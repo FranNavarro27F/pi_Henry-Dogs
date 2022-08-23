@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { cleanDetail, getDetail } from "../redux/actions";
 import Loader from './Loader';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 import "./css/Detail.css";
 
 export default function Detail() {
@@ -21,24 +22,32 @@ export default function Detail() {
   return !detail.img?<Loader/>:(
     <div id={"detail"}>
       <NavBar/>
-      <div id={"info_detail"}>
-        <div id={"img_div"}><img src={detail.img} alt={"imagen"} /></div>
-        <div><h3>Name: {detail.name}</h3></div>
-        <div><h3>Weight_min: {detail.weight_min} kg</h3></div>
-        <div><h3>Weight_max: {detail.weight_max} kg</h3></div>
-        <div><h3>Height_min: {detail.height_min} cm</h3></div>
-        <div><h3>Height_max: {detail.height_max} cm</h3></div>
-        <div><h3>Life_span: {detail.life_span}</h3></div>
-        {/* <div><h2>Temperament: {detail.temperament}</h2></div> */}
-        <div>
-          <h2>Temperament: </h2>
-          <ul>
-            {
-              detail.temperament?.map(cur=>{
-                return <li>{cur}</li>
-              })
-            }
-          </ul>
+      <div id={"div_ext_name"}><div id={"div_int_name"}><h1>{detail.name}</h1></div></div>
+      <div id={"detail_sin_navBar"}>
+        <div id={"img_y_datos"}>
+          <div id={"img_div"}>
+            <img src={detail.img} alt={"imagen"} />
+          </div>
+          <div id={"datos_y_temperament"}>
+            <div id={"detail_datos"}>
+              <div><p><b>Weight_min:</b> {detail.weight_min} kg</p></div>
+              <div><p><b>Weight_max:</b> {detail.weight_max} kg</p></div>
+              <div><p><b>Height_min:</b> {detail.height_min} cm</p></div>
+              <div><p><b>Height_max:</b> {detail.height_max} cm</p></div>
+              <div><p><b>Life_span:</b> {detail.life_span}</p></div>
+            </div>
+           
+           <div id={"detail_temperament"}>
+            <p><b>Temperament:</b></p>
+            
+              {
+                detail.temperament?.map(cur=>{
+                  return <p>{cur}</p> 
+                })
+              }
+            </div>
+      <Link to={"/home"}> <button>Back to Home</button></Link>
+          </div>
         </div>
       </div>
     </div>
