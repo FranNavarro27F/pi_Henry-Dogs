@@ -4,7 +4,6 @@
 }
 
 
-
 #detail_sin_navBar{
     /* background-color: rgb(148, 113, 113); */
     height: 88vh;
@@ -40,11 +39,25 @@
     width: 33rem;
 }
 
+#div_delete_detail{
+    height: 26rem;
+    width: 8rem;
+    /* background-color: rgb(165, 165, 210); */
+    display: flex;
+    justify-content: flex-end;
+}
+#delete_detail{
+   height: 1.6rem;
+   width: 4.3rem;
+}
+
+
 #detail_datos{
     /* background-color: rgb(66, 87, 87); */
-    width: 13rem;
+    width: 12rem;
     height: 8rem;
     text-align: left;
+    margin-top:3rem;
 }
 
 #detail_temperament{

@@ -111,3 +111,17 @@ export function cleanDetail(){
         })
     }
 }
+
+export function deleteCard(id){
+    return async function (dispatch){
+        try {
+            let result=  await axios.delete(`/delete?id=${id}`)
+            if(result){
+                alert("deleted successfully!")
+            }
+        } catch (e) {
+            alert("problems when we try to delete the card!")
+        }
+
+    }
+}

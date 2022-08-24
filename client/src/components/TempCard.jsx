@@ -3,7 +3,7 @@ import "./css/TempCard.css";
 
 export default function TempCard({temp, setEstado, id, estado, inspector}) {
     
-    let idTemp=id;
+    // let idTemp=id;
 
    function handle_delete_temp(e){
         setEstado({

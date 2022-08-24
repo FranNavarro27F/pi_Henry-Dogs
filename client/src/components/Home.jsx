@@ -11,17 +11,16 @@ import { Link } from 'react-router-dom';
 import Card from "./Card.jsx";
 import Paginado from "./Paginado.jsx";
 import Loader from "./Loader";
-import Message from "./Message";
+
 
 
 export default function Home() {
-
   let dispatch= useDispatch();
   let dogs=useSelector(state=> state.dogs);
   let curPage=useSelector(state=> state.curPage);
+  let [refresh, setRefresh]=useState("");
 
   let loader=useSelector(state=> state.loader);
-  let error=useSelector(state=> state.error);
 
   const dogsPerPage= 8;
   const indexOfLastDog= curPage * dogsPerPage;
@@ -35,30 +34,19 @@ export default function Home() {
       dispatch(getDogs());
     }
   },[dispatch, dogs]);
-  let [refresh, setRefresh]=useState("")
 
   
-
-
-  return(
-    
+  return loader? <Loader/>:(
     <div id={"Home"}>
-
       <div><NavBar/></div>
-
       <div id={"optiondBar"}>
         <div id={"Orders"}><Orders setRefresh={setRefresh}/></div>
         <div id={"HsearchBar"}><SearchBar/></div>
         <div id={"Filters"}><Filters/></div>
       </div>
-
-      {/* {loader && <Loader/>}
-      {error && <Message/>} */}
-
       <div id="greed">
         { 
-
-          currentDogs?currentDogs.map(cur=> {
+          currentDogs?.map(cur=> {
             
             return(
               <div key={cur.id+Math.random()*2000}>
@@ -75,11 +63,10 @@ export default function Home() {
                 </Link>
               </div>
             )
-          }): <Loader/>
+          })
           
         }
       </div>
-      
       <div id={"Paginado"}>
         <Paginado 
         dogsPerPage={dogsPerPage}
@@ -87,9 +74,6 @@ export default function Home() {
         paginado={paginado}
         />
       </div>
-     
-     
-
     </div>
   )
 }

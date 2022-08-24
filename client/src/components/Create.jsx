@@ -129,6 +129,7 @@ export default function Create() {
       });
 
       alert("breed of dog created!!!")
+      dispatch(getDogs())
       navigate("/home");
    
   }
@@ -165,7 +166,6 @@ export default function Create() {
           <input placeholder={"ej: Dogo"} type="text" name={"name"} value={estado.name} 
           onChange={(e)=>{handleChange(e)}}
           />
-          {/* <label>❌ ✅</label> */}
           <p className="error_message">{error && error.name}</p>
         </div>
         <br/>
@@ -220,8 +220,12 @@ export default function Create() {
         <br/>
         <div>
           <label> <b> Img: </b> </label>
-          <input placeholder={"ej: http://mi_imagen.jpg"} type="text" name={"img"} value={estado.img} 
-          onChange={(e)=>{handleChange(e)}}
+          <input 
+            type="text"
+            placeholder={"ej: http://mi_imagen.jpg"}  
+            name={"img"} 
+            value={estado.img} 
+            onChange={(e)=>{handleChange(e)}}
           />
           <i> url </i>
         </div>
@@ -241,22 +245,24 @@ export default function Create() {
           <div id={"container_temps_card"}>
           {
             estado.temperament?.map(curID=>{
-              return <TempCard key={curID} temp={temperaments[curID-1].name} id={curID} estado={estado} setEstado={setEstado} inspector={inspector}/>
+              return <TempCard
+                       key={curID}
+                       temp={temperaments[curID-1].name}
+                       id={curID}
+                       estado={estado}
+                       setEstado={setEstado}
+                       inspector={inspector}
+                       />
             })
           }
-            
             <p className="error_message">{error && error.temperament}</p>
           </div>
         </div>
-      
         <div>
-        <br/>
-        {/* disabled={error && "disabled"} */}
-        {/* disabled={handleDisable(error && error) && "disabled" } */}
+          <br/>
           <input disabled={activ && "disabled"} type={"submit"} value={"Create!"}/>
         </div>
       </form>
-
      </div>
     </div>
   )
