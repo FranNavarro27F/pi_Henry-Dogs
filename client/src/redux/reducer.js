@@ -7,6 +7,7 @@ const initialState={
     detail:{},
     loader:true,
     error:null,
+    searchBar_visivility:false
 };
 
 export default function rootReducer(state= initialState, action) {
@@ -121,6 +122,12 @@ export default function rootReducer(state= initialState, action) {
             }
         case "FILT_CREATED":
             let auxDogs4=[...state.allDogs];
+            if(action.payload=== "db"){
+                let testing_db=auxDogs4.filter(cur=> isNaN(cur.id));
+                if(testing_db.length===0){
+                    alert("there is no breed of dog to show yet, try to create one 🐕‍🦺")
+                }
+            }
             return{
                 ...state,
                 dogs: action.payload==="default"?state.allDogs:action.payload==="db"?auxDogs4.filter(cur=> isNaN(cur.id)):auxDogs4.filter(cur=> !isNaN(cur.id)) 
@@ -134,6 +141,11 @@ export default function rootReducer(state= initialState, action) {
             return{
                 ...state,
                 detail: action.payload
+            }
+        case "VISIVILITY_SEARCH_BAR":
+            return{
+                ...state,
+                searchBar_visivility: action.payload
             }
 
 

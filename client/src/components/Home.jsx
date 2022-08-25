@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import Card from "./Card.jsx";
 import Paginado from "./Paginado.jsx";
 import Loader from "./Loader";
+import Footer from "./Footer";
 
 
 
@@ -41,7 +42,6 @@ export default function Home() {
       <div><NavBar/></div>
       <div id={"optiondBar"}>
         <div id={"Orders"}><Orders setRefresh={setRefresh}/></div>
-        <div id={"HsearchBar"}><SearchBar/></div>
         <div id={"Filters"}><Filters/></div>
       </div>
       <div id="greed">
@@ -49,8 +49,9 @@ export default function Home() {
           currentDogs?.map(cur=> {
             
             return(
-              <div key={cur.id+Math.random()*2000}>
-                <Link to={`/detail/${cur.id}`}>
+              <div  key={cur.id+Math.random()*2000}>
+
+                <Link id="div_home_style_link" to={`/detail/${cur.id}`}>
                   <Card 
                     key={cur.id}
                     img={cur.img}
@@ -67,12 +68,17 @@ export default function Home() {
           
         }
       </div>
-      <div id={"Paginado"}>
-        <Paginado 
-        dogsPerPage={dogsPerPage}
-        allDogs={dogs.length}
-        paginado={paginado}
-        />
+      <div  id={"home_div_externo_paginado"}>
+       <div id={"Paginado"}>
+         <Paginado 
+         dogsPerPage={dogsPerPage}
+         allDogs={dogs.length}
+         paginado={paginado}
+         />
+       </div>
+      </div>
+      <div id={"home_div_footer"}>
+       <Footer />
       </div>
     </div>
   )

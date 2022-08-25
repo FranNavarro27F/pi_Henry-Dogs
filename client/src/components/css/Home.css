@@ -1,7 +1,27 @@
 /* #Home{
     background-color: rgb(241, 237, 213);
 } */
+input{
+    border-radius: 1rem;
+    border-style: outset;
+    border-color: #F7ECDE;
+}
+.button_oscuro{
+    border-style:outset;
+    border-color: #ffffff;
+    background-color:#54BAB9 ;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 5px 0px;
+    cursor: pointer;
+ 
+}
 
+
+#div_home_style_link{
+    text-decoration: none;
+    color: #ffffff;
+}
 
 #greed {
     display: grid;
@@ -16,25 +36,41 @@
     position: relative;
 }
 
-#Paginado{
-    display: inline;
-    position: absolute;
-    top: 39rem;
-    left: 18rem;
-    
-}
+
 
 #optiondBar{
-    background-color: hwb(32 76% 0%);
+    background-color: #9ED2C6;
     border-style:outset;
-    border-radius: 1rem;
+    border-radius: 2rem;
     
     display:flex;
-    justify-content: space-around;
+    justify-content: space-around
 
 }
 
-/* #Orders{
+#home_div_externo_paginado{
+    /* background-color: blue; */
+    height: 3.1rem;
     display: flex;
-    justify-content: space-around;
-} */
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 0.7rem;
+}
+#Paginado{
+    /* background-color: brown; */
+    width: 51rem;
+    
+}
+
+#optiondBar select{
+    border-radius: 1rem;
+}
+#home_div_footer{
+    background-color:#9ED2C6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 1.6rem;
+    border-width: 6px;
+    border-color: #ffffff;
+}

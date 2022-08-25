@@ -17,7 +17,7 @@ export default function Card({img, id, name, weight_min, weight_max, temperament
     <div id={"total_card"}>
       <div id={"the_card"}>
 
-        <div>{name}</div>
+        <div id={"card_div_name"}>{name}</div>
         <div id={"im_temp"}>
           <div><img src={img} alt="image_breed" /></div>
           <div id={"temp"}>{temp?.map(cur=>{

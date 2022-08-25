@@ -1,0 +1,18 @@
+
+#footer_div_externo{
+    /* background-color: bisque; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 2rem;
+    
+}
+
+#footer_div_interno{
+    /* background-color: aqua; */
+    height: 1.5rem;
+    width: 80rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

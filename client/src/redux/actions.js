@@ -110,18 +110,33 @@ export function cleanDetail(){
             payload:{}
         })
     }
-}
+};
+
+export function visivility_searchBar(on_off){
+    return function (dispatch){
+        return dispatch({
+            type:"VISIVILITY_SEARCH_BAR",
+            payload: on_off
+        })
+    }
+};
 
 export function deleteCard(id){
     return async function (dispatch){
         try {
             let result=  await axios.delete(`/delete?id=${id}`)
+            let getDogs2= (await axios.get(`/dogs`)).data;
             if(result){
+                
                 alert("deleted successfully!")
+                return dispatch({
+                    type:"GET_DOGS",
+                    payload: getDogs2
+                })
             }
         } catch (e) {
             alert("problems when we try to delete the card!")
         }
 
     }
-}
+};

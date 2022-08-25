@@ -1,3 +1,16 @@
+ 
+ select{
+    border-radius: 1rem;
+ }
+ input{
+
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(38, 37, 37);
+
+   
+ }
 
  label{
     font-size:80%;
@@ -18,8 +31,28 @@
     margin-top: 1rem;
     margin-left: 20rem;
     margin-right: 20rem;
-    background-color:antiquewhite;
+    background-color:#F7ECDE;
     display: flex;
     justify-content: center;
     align-items: center
+}
+#cont_form{
+    background-color: #E9DAC1;
+    height: 36rem;
+    margin-bottom: 0.2rem;
+}
+
+#create_div_footer_externo{
+    /* background-color: aquamarine; */
+    background-color:#9ED2C6;
+    height: 1.7rem;
+    display: flex;
+    align-items: flex-end;
+}
+#create_div_footer_interno{
+    background-color:#9ED2C6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 1.6rem;
 }

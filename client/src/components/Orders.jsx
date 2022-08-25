@@ -21,19 +21,10 @@ export default function Orders({setRefresh}) {
     setRefresh(e.target.value);
     // e.target.value="";
   };
-
+ 
   return (
     <div id={"orders2"}>
 
-      <div>
-        <label>Order by Name:</label>
-        <select onChange={(e)=>{handleChange(e)}}>
-          <option value={"default"}>Default</option>
-          <option value={"a-z"}>Ascendent</option>
-          <option value={"z-a"}>Descendent</option>
-        </select> 
-      </div>
-      <br/>
       <div>
         <label>{"Order by weight:"}</label>
         <select onChange={(e)=>{handleChangeW(e)}}>
@@ -41,6 +32,15 @@ export default function Orders({setRefresh}) {
           <option value={"min_weight"}>Minimum Weight</option>
           <option value={"max_weight"}>maximum weight</option>
         </select>
+      </div>
+      <br/>
+      <div>
+        <label>Order by Name:</label>
+        <select onChange={(e)=>{handleChange(e)}}>
+          <option value={"default"}>Default</option>
+          <option value={"a-z"}>Ascendent</option>
+          <option value={"z-a"}>Descendent</option>
+        </select> 
       </div>
 
     </div>

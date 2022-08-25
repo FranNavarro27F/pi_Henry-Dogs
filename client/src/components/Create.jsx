@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import NavBar from './NavBar';
 import { useDispatch, useSelector } from 'react-redux';
-import { createDog, getDogs, getTemperaments } from '../redux/actions';
+import { createDog, getDogs, getTemperaments, visivility_searchBar } from '../redux/actions';
 import TempCard from './TempCard';
 import "./css/Create.css";
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 
 
@@ -17,10 +18,13 @@ export default function Create() {
 
   useEffect(()=>{
     dispatch(getTemperaments());
+    dispatch(visivility_searchBar(true))
     return function (){
+      dispatch(visivility_searchBar(false))
       dispatch(getDogs())
     }
   },[dispatch])
+
   let [activ, setActiv]=useState(true);
   let [error, setError]=useState(null);
   let [estado, setEstado]=useState({
@@ -106,6 +110,9 @@ export default function Create() {
     if(input.temperament?.length=== 0){
       error.temperament="select at least one temperament";
     }
+    if(input.temperament?.length >= 10){
+      error.temperament="less than 10 temperaments";
+    }
     
     setError(error)
     handleDisable(error)
@@ -149,18 +156,20 @@ export default function Create() {
     setActiv(true);
   }
  }
+ const estilos= {
+  ocultar:{
+    visibility: "hidden",
+  }
+ }
 
 
   return (
     <div id={"all_create"}>
-      <div><NavBar /></div>
+      <div ><NavBar /></div>
      <div id={"cont_form"}>
-
       <br/>
       <br/>
-
       <form onSubmit={(e)=>{handleSubmit(e)}}>
-
         <div>
           <label> <b> Name: </b> </label>
           <input placeholder={"ej: Dogo"} type="text" name={"name"} value={estado.name} 
@@ -260,9 +269,14 @@ export default function Create() {
         </div>
         <div>
           <br/>
-          <input disabled={activ && "disabled"} type={"submit"} value={"Create!"}/>
+          <input className={"button_oscuro"} disabled={activ && "disabled"} type={"submit"} value={"Create!"}/>
         </div>
       </form>
+     </div>
+     <div id={"create_div_footer_externo"}>
+      <div id={"create_div_footer_interno"}>
+      <Footer/>
+      </div>
      </div>
     </div>
   )

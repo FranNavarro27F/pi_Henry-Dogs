@@ -8,6 +8,7 @@ import Loader from './Loader';
 import NavBar from './NavBar';
 import { Link } from 'react-router-dom';
 import "./css/Detail.css";
+import Footer from './Footer';
 
 export default function Detail() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function Detail() {
   useEffect(()=>{
     dispatch(getDetail(id));
     return function(){
-      dispatch(cleanDetail())
+      dispatch(cleanDetail()) 
     }
   },[dispatch, id]);
   let detail= useSelector((state)=> state.detail);
@@ -29,7 +30,7 @@ export default function Detail() {
 
   return !detail.img?<Loader/>:(
     <div id={"detail"}>
-      <NavBar/>
+     <div><NavBar/></div> 
       <div id={"div_ext_name"}><div id={"div_int_name"}><h1>{detail.name}</h1></div></div>
       <div id={"detail_sin_navBar"}>
         <div id={"img_y_datos"}>
@@ -54,15 +55,18 @@ export default function Detail() {
                 })
               }
             </div>
-           <Link to={"/home"}> <button>Back to Home</button></Link>
+           <Link to={"/home"}> <button className={"button_oscuro"}>Back to Home</button></Link>
           </div>
           {
             isNaN(id) &&
             <div id={"div_delete_detail"}>
-              <button id={"delete_detail"} onClick={(e)=>{handleDelete(e)}}>Delete 🗑</button>
+              <button id={"delete_detail"} className={"button_oscuro"} onClick={(e)=>{handleDelete(e)}}>Delete 🗑</button>
             </div>
           }
         </div>
+      </div>
+      <div id={"detail_div_footer_externo"}>
+      <div id={"detail_div_footer_interno"}><Footer/></div>
       </div>
     </div>
   )

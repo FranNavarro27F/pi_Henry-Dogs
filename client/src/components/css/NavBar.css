@@ -1,14 +1,21 @@
 #nav{
-    background-color: rgba(185, 204, 204, 0.651);
+    background-color:#9ED2C6;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border-style:outset;
 }
-#nav ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+
+#NavBar_content_int{
+    /* background-color:#54BAB9 ; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70rem;
+    height: 2rem;
+    border-radius: 2rem;
 }
-#nav ul li{
-    display:  inline-block;
-    padding: 10px; 
-    margin-left: 3rem;
-    margin-right: 3rem;
-}
+

@@ -3,12 +3,13 @@
 
 #tempCard{
     border-radius: 0.5rem;
-    border-style:ridge;
+    border-style:outset;
+    box-shadow: 5px 6px 4px 0px rgba(207,205,207,1);
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:  rgba(96, 96, 81, 0.598);
+    background-color: #9ED2C6;
     height: 2.4rem;
     width: 5rem;
 }

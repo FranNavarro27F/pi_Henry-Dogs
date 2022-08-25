@@ -1,48 +1,17 @@
-/* .card {
-    width: 15rem;
-    border: 3px inset white;
-    background: #c9ae7d;
-    transition: all .5s ease-in-out;
-    border-radius: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #070101; */
-    /* font-weight: bolder; */
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
-  /* } */
-  
-  /* .card:hover {
-    transform: translateY(-5px);
-    transition: all .2s ease-in-out;
-  } */
 
-  /* .card img{
-    border-radius: 10px;
-    margin-top: 0.7rem;
-    height: 6.5rem;
-    width: 10rem;
-  } */
-
-  /* #datos{
-    font-size: 70%;
-    margin-bottom: 1rem;
-  } */
-
-  /* #datos ul li{
-    text-align: left;
-  } */
 
   #total_card{
-    /* background-color: brown; */
 
   }
 
   #total_card p{
-    /* text-decoration: none; */
+  
+   
   }
 
   #total_card img{
+    border-style:outset;
+    border-width: 1px;
     width: 9.7rem;
     height: 7.7rem;
     border-radius: 1rem;
@@ -50,31 +19,37 @@
   }
 
   #the_card{
-    border-style: solid;
-    border-radius: 1rem;
+    box-shadow: 15px 11px 5px 0px rgba(207,205,207,1);
+    border-style:outset;
+    border-radius: 2rem;
     border-width: 1px;
-    background-color: azure;
+    background-color: #d7c8af;
     height: 14rem;
     width: 19rem;
   }
 
   #im_temp{
+    /* background-color: aqua; */
     margin-top: 1rem;
     margin-left: 1rem;
     display: flex;
   }
 
   #temp{
+    /* background-color: aquamarine; */
     font-size: small;
     text-decoration: none;
     width: 9rem;
   }
+  
+  #card_div_name{
+    /* background-color: blue; */
+    margin-top: 0.5rem;
+  }
 
   #div_weight{
-  
+    /* background-color: blueviolet; */
     float: left;
-  
-
     display: flex;
     margin-top: 1rem;
     margin-left: 1.6rem;

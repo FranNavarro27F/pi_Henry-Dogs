@@ -1,4 +1,4 @@
-#orders2{
+#filters2{
     /* background-color: aqua; */
     height: 2rem;
     width: 30rem;
@@ -6,4 +6,8 @@
     justify-content: space-around;
     align-items: center;
 
-} 
+}
+
+#filters2{
+    /* visibility: hidden; */
+}

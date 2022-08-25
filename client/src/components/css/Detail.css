@@ -1,28 +1,31 @@
 
 #detail{
     /* background-color: black; */
-}
+} 
 
 
 #detail_sin_navBar{
-    /* background-color: rgb(148, 113, 113); */
-    height: 88vh;
+    background-color: #F7ECDE;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #div_int_name{
+    /* background-color: aqua; */
     margin-top: 1.2rem;
+    
 }
 #img_y_datos{
-    background-color: rgba(200, 200, 200, 0.524);
-    border-style: solid;
+    background-color:#E9DAC1;
+    box-shadow: 15px 11px 5px 0px rgba(207,205,207,1);
+    border-style:outset;
     display:flex;
     align-items: center;
     justify-content: center;
     border-radius: 2rem;
     height: 30rem;
     width: 60rem;
+    margin-bottom: 2.1rem;
 }
 
 #img_div{
@@ -75,4 +78,19 @@
 #datos_y_temperament{
     display: flex;
     flex-direction: column;
+}
+
+#detail_div_footer_externo{
+    background-color: #9ED2C6;
+    height: 2rem;
+
+}
+
+#detail_div_footer_interno{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.7rem;
+    width: 80rem ;
 }
