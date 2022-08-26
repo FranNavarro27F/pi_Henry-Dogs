@@ -9,7 +9,6 @@ export default function Paginado({dogsPerPage, allDogs, paginado}) {
   for(let i=1; i <= Math.ceil(allDogs/dogsPerPage); i++){
     pageNumbers.push(i)
   }
-
   return (
     <div id={"paginado"}>
       <nav>

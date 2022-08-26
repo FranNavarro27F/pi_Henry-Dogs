@@ -48,7 +48,7 @@ router.post("/dogs", async (req, res)=>{
                 "https://www.publimetro.cl/resizer/mJVQolfgbtGIvoXnli4Ttxx95e8=/1440x1080/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/MODCI5L57RFGVF7ZPHSJP42KRY.jpg",
                 "https://imgmedia.wapa.pe/1200x660/wapa/migration/imagen/2019/03/20/noticia-1553104004-perro-doge-meme-viral.png",
         ]
-        img=arr[Math.round(Math.random()*10)]
+        img=arr[Math.round(Math.random()*6)]
         }
         let newDog= await Dog.create({
             img: img,
