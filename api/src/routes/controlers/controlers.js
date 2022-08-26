@@ -51,7 +51,7 @@ const getDogs= async ()=>{
     }else{
         return concatFiltNullWeight1;
     }
-}
+};
 
 const getNameBreeds= async (name)=>{     
      let dogis= await getDogs();
@@ -60,7 +60,7 @@ const getNameBreeds= async (name)=>{
         throw new Error("did not find a breed of dog with the indicated name");
      }
      return a;
-}
+};
 
 const getIdBreeds= async (id)=>{
     if(id.includes("-")){
@@ -95,20 +95,50 @@ const getIdBreeds= async (id)=>{
             return filt[0];
         }
     } 
-}
+};
+
+// const getTemperaments= async ()=>{
+//     let temperament_db=( await Temperament.findAll()).map(cur=> cur.dataValues);
+//     if(temperament_db.length===0){
+//         let dogs= await getDogs()
+//         let temperamentS=Array.from(new Set((dogs.map(cur=> cur.temperament)).flat())).filter(cur=> cur!== undefined)
+//         temperamentS.forEach(async cur=> await Temperament.create({name:cur}))
+//         console.log("TEMPERAMENTS TRAIDOS DE **API**")
+//     }
+//     console.log("TEMPERAMENTS TRAIDOS DE **DB**")
+//     return temperament_db;
+// }
+// getTemperaments()
 
 const getTemperaments= async ()=>{
     let temperament_db=( await Temperament.findAll()).map(cur=> cur.dataValues);
+    
     if(temperament_db.length===0){
-        let dogs= await getDogs()
-        let temperamentS=Array.from(new Set((dogs.map(cur=> cur.temperament)).flat())).filter(cur=> cur!== undefined)
-        temperamentS.forEach(async cur=> await Temperament.create({name:cur}))
-        console.log("TEMPERAMENTS TRAIDOS DE **API**")
+        let dogs_api= (await axios.get(`https://api.thedogapi.com/v1/breeds`)).data;
+        let collector_temperaments= dogs_api.map(cur=> {
+            if(cur.temperament){
+                return cur.temperament
+            }
+        })
+        let splited_and_flated_collector_temperaments= (collector_temperaments.map(cur=> cur?.split(", "))).flat();
+        let temperaments= Array.from( new Set( splited_and_flated_collector_temperaments));
+
+        let notNullTemperaments= temperaments.filter(cur=> cur!== undefined )
+
+       let temperaments_created= (await Promise.all(notNullTemperaments.map( async cur=> await Temperament.create({name: cur})))).map(cur=> cur.dataValues);
+
+        
+        console.log("**temperaments_from_API_and_created: **", temperaments_created)
+        //  console.log("**temperaments_from_API_and_created: **")
+        return temperaments_created;
+    }else{
+        console.log("TEMPERAMENTS TRAIDOS DE **DB**", temperament_db)
+        // console.log("TEMPERAMENTS TRAIDOS DE **DB**")
+        return temperament_db;
     }
-    console.log("TEMPERAMENTS TRAIDOS DE **DB**")
-    return temperament_db;
 }
 getTemperaments()
+
 
 
 

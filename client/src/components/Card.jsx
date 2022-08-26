@@ -26,7 +26,7 @@ export default function Card({img, id, name, weight_min, weight_max, temperament
         </div>
        <div id={"div_weight"}>Wheight: {weight_min}-{weight_max} kg</div>
         
-      </div>
+      </div> 
     </div>
   )
 }
