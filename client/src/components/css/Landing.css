@@ -1,24 +1,66 @@
 
 
-/* .fondo {
-    
-    background-image: url("../img/landing1.jpg");
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-   
-  }
-  #buttos-landing{
-    margin-top:8rem ;
-    padding: 10px 65px;
+#landing_div_externo{
+   /* background-color: rgb(26, 255, 0); */
+  background-image: url("../img/w1.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
   
-  } */
-
-  .landing{
-    background-image: url("../img/w1.jpg");
-    height: 100vh;
+}
+  #landing_div_interno{
+    /* background-color:rgba(0, 255, 255, 0.634); */
+    height: 35rem;
+    width: 50rem;
+    display: flex;
     
+   
+    flex-direction: column;
+
   }
+      #landing_div_button{
+        /* background-color: rgba(255, 255, 0, 0.546); */
+        height: 2.5rem;
+        width: 50rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+        #landing_div_button button{
+            border-radius: 2rem;
+            height: 1.8rem;
+            width: 7rem;
+          }
+
+      #landing_div_text{
+        /* background-color: rgba(0, 0, 255, 0.665); */
+        height: 18rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+        #landing_div_title{
+          /* background-color: rgba(211, 19, 19, 0.633); */
+          height: 6rem;
+          width: 43rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+        }
+        #landing_div_externo_parrafo{
+          /* background-color: rgba(137, 43, 226, 0.711); */
+          height: 13rem;
+          width: 35rem;
+        }
+          #landing_div_parrafo{
+            /* background-color: cadetblue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 9rem;
+            width: 20rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+          }

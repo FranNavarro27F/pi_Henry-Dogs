@@ -16,3 +16,20 @@
     justify-content: space-around;
     align-items: center;
 }
+
+#footer_div_contacts{
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    
+    width: 14rem;
+}
+
+#footer_img_linkedin{
+    height: 1.7rem;
+}
+
+#footer_img_git{
+    height: 1.3rem;
+}

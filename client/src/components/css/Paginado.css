@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 1.7rem;
     width: 50rem;
     background-color: #E9DAC1;
 
@@ -26,11 +27,16 @@
     border-color: #ffffff;
     box-shadow: 0.5px 0.5px 0.5px 0px; 
     cursor: pointer;
+    transition: all 0.2s ;
+}
+#paginado ul li button:hover{
+    transform: translateY(-0.3rem);
+    height: 1.2rem;
 }
 
 .paginado_selected{
     color:#ffffff;
-    border-style:dashed;
+    border-style:hidden;
 
     
 }

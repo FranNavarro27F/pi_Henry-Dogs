@@ -20,6 +20,9 @@ input{
 
 #div_home_style_link{
     text-decoration: none;
+    text-shadow: #9ED2C6; 
+    /* text-shadow: 1px 1px 0px #9ED2C6;
+    /* text-shadow: 1px 1px 1px black; */
     color: #ffffff;
 }
 
