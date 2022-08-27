@@ -19,18 +19,23 @@
   }
 
   #the_card{
-    box-shadow: 15px 11px 5px 0px rgba(207,205,207,1);
+    box-shadow: 6px 6px 4px 0px rgba(207,205,207,1);
    
     border-style:outset;
     border-radius: 2rem;
     border-width: 1px;
     background-color: #d7c8af;
-    height: 14rem;
+    height: 13.7rem;
     width: 19rem;
     transition: all 0.2s ease-in;
   }
   #the_card:hover{
-    transform: translateY(-0.5rem)
+    transform: translateY(-0.5rem);
+    border-radius: 2.5rem;
+    border-color: #979e9e;
+    border-style: solid;
+    box-shadow: 15px 15px 5px 0px rgba(207,205,207,1);
+    
   }
 
   #im_temp{

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import NavBar from './NavBar';
 import { useDispatch, useSelector } from 'react-redux';
-import { createDog, getDogs, getTemperaments, visivility_searchBar } from '../redux/actions';
+import { createDog, getDogs, getTemperaments, setCurPage, visivility_searchBar } from '../redux/actions';
 import TempCard from './TempCard';
 import "./css/Create.css";
 import { useNavigate } from 'react-router-dom';
@@ -138,6 +138,7 @@ export default function Create() {
       alert("breed of dog created!!!")
       dispatch(getDogs())
       navigate("/home");
+      dispatch(setCurPage(1))
    
   }
 
@@ -269,7 +270,7 @@ export default function Create() {
         </div>
         <div>
           <br/>
-          <input className={"button_oscuro"} disabled={activ && "disabled"} type={"submit"} value={"Create!"}/>
+          <input id={"create_input_submite_form"} className={"button_oscuro"} disabled={activ && "disabled"} type={"submit"} value={"Create!"}/>
         </div>
       </form>
      </div>

@@ -1,98 +1,111 @@
 
-#detail{
-    /* background-color: black; */
-} 
-#detail p {
-   
-}
-
-#detail_sin_navBar{
-    background-color: #F7ECDE;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#div_int_name{
-    /* background-color: aqua; */
-    margin-top: 1.2rem;
-    
-}
-#img_y_datos{
-    background-color:#E9DAC1;
-    box-shadow: 15px 11px 5px 0px rgba(207,205,207,1);
-    border-style:outset;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2rem;
-    height: 30rem;
-    width: 60rem;
-    margin-bottom: 2.1rem;
-}
-
-#img_div{
-    /* background-color: blue; */
-    width: 35rem;
-    height: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#img_div img{
-    border-radius: 1rem;
-    height: 23rem;
-    width: 33rem;
-}
-
-#div_delete_detail{
-    height: 26rem;
-    width: 8rem;
-    /* background-color: rgb(165, 165, 210); */
-    display: flex;
-    justify-content: flex-end;
-}
-#delete_detail{
-   height: 1.6rem;
-   width: 4.3rem;
-}
-
-
-#detail_datos{
-    /* background-color: rgb(66, 87, 87); */
-    width: 12rem;
-    height: 8rem;
-    text-align: left;
-    margin-top:3rem;
-}
-
-#detail_temperament{
-    /* background-color: blueviolet; */
-    height: 16rem;
-    width: 12rem;
-    text-align: left;
-   
-}
-#detail_temperament p{
-    width: 20%;
-}
-
-
-#datos_y_temperament{
+#detail_div_total{
+    /* background-color: rgb(254, 193, 8); */
+    height: 99.5vh;
     display: flex;
     flex-direction: column;
-}
-
-#detail_div_footer_externo{
-    background-color: #9ED2C6;
-    height: 2rem;
-
-}
-
-#detail_div_footer_interno{
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.7rem;
-    width: 80rem ;
-}
+} 
+    #detail_div_interno1_navBar{
+        /* background-color: brown; */
+    }
+    #detail_div_interno2_total_card{
+        /* background-color: blueviolet; */
+        font-size:large;
+        height: 36rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        #detail_div_interno2_card{
+            background-color: #E9DAC1;
+            border-radius: 2rem;
+            border-style:groove;
+            box-shadow: 15px 11px 5px 0px rgba(207,205,207,1);
+            width: 68rem;
+            height: 33rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+            #detail_div_interno2_card img{
+                height: 26rem;
+                width: 39rem;
+                border-radius: 2rem;
+            }
+            #detail_div_interno2_card_name{
+                /* background-color: darkgoldenrod; */
+                width: 65rem;
+                height: 3rem;
+            }
+            #detail_div_interno2_card_datosYbutton{
+                /* background-color: cornflowerblue; */
+                width: 65rem;
+                height: 28rem;
+                display: flex;
+            }
+                #detail_div_interno2_card_datosYbutton_img{
+                    /* background-color: aqua; */
+                    height: 27rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #detail_div_interno2_card_datosYbutton_content_temperamentsEinfo{
+                    /* background-color: brown; */
+                    width: 19.3rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                    #detail_div_interno2_card_datosYbutton_info{
+                        /* background-color: coral; */
+                        height: 7.5rem;
+                        width: 14rem;
+                        text-align: start;
+                    }
+                    #detail_div_internao2_card_datosYbutton_temperaments{
+                        /* background-color: darkgreen; */
+                        width: 14rem;
+                        height: 18rem;
+                        text-align: start;
+                    }
+                #detail_div_interno2_card_datosYbutton_button{
+                    /* background-color: aquamarine; */
+                    height: 25rem;
+                    display: flex;
+                    flex-direction: column;
+                }
+                    #detail_div_interno2_card_datosYbutton_button_delete{
+                        /* background-color: blue; */
+                        height: 10rem;
+                        display: flex;
+                    }
+                    #detail_div_interno2_card_datosYbutton_button_delete button{
+                       height: 1.5rem;
+                       transition: all 0.2s ;
+                    }
+                    #detail_div_interno2_card_datosYbutton_button_delete button:hover{
+                        height: 1.7rem;
+                        background-color: red;
+                        
+                    }
+                    #detail_div_interno2_card_datosYbutton_button_backHome{
+                        /* background-color: blueviolet; */
+                        height: 14rem;
+                        display: flex;
+                        align-items: flex-end;
+                    }
+                    #detail_div_interno2_card_datosYbutton_button_backHome button{
+                        height: 1.5rem;
+                        transition: all 0.2s ;
+                    }
+                    #detail_div_interno2_card_datosYbutton_button_backHome button:hover{
+                        height: 1.6rem;
+                        transform:translateX(1rem);
+                    }
+    #detail_div_interno_3_footer{
+        background-color: rgb(232, 10, 191);
+        
+    }
