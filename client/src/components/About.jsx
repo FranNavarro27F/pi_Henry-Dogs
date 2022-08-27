@@ -18,7 +18,7 @@ export default function About() {
           <p>Linkedin:  <a href="https://www.linkedin.com/in/fran-navarro-/">https://www.linkedin.com/in/fran-navarro-/</a></p> 
           <br />
           <p>GitHub:  <a href="https://github.com/FranNavarro27F">https://github.com/FranNavarro27F</a></p>
-
+    
         </div>
       </div>
     </div>
