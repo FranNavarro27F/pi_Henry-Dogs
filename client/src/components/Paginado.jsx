@@ -17,14 +17,16 @@ export default function Paginado({dogsPerPage, allDogs, paginado}) {
             pageNumbers?.map(cur=>{
              return ( 
                 <li key={cur}>
-                  <button  className={curPage === cur ?"paginado_selected" : "paginado_no_selected"} onClick={(e)=>{paginado(cur)}}>{cur}</button>
+                  <button 
+                    className={curPage === cur ?"paginado_selected" : "paginado_no_selected"}
+                    onClick={(e)=>{paginado(cur)}}
+                    >{cur}</button>
                 </li>
              )
             })
           }
         </ul>
       </nav>
-
     </div>
   )
 }

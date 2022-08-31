@@ -1,8 +1,7 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { findName, setCurPage, visivility_searchBar } from '../redux/actions';
+import { findName, setCurPage} from '../redux/actions';
 import "./css/SearchBar.css";
 
 export default function SearchBar() {
@@ -27,7 +26,7 @@ export default function SearchBar() {
           <input type={"text"} placeholder={"Ej: akita..."} 
             onChange={(e)=>{handleCange(e)}}
           />
-          <input className={"button_oscuro"} type={"submit"} value={" 🔎 "}
+          <input id={"searchbar_input_submite"} className={"button_oscuro"} type={"submit"} value={" 🔎 "}
             onClick={(e)=>{handleSubmit(e)}}
           />
         </form>

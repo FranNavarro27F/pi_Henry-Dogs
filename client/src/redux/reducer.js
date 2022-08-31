@@ -147,6 +147,12 @@ export default function rootReducer(state= initialState, action) {
                 ...state,
                 searchBar_visivility: action.payload
             }
+        case "REFRESH_DOGS":
+            return {
+                ...state,
+                dogs: state.allDogs
+            }
+        
 
 
         default:

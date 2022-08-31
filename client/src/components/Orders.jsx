@@ -7,24 +7,19 @@ import "./css/Orders.css";
 export default function Orders({setRefresh}) {
   let dispatch= useDispatch();
   
-
-
   function handleChange(e){
     dispatch(orderByName(e.target.value));
     dispatch(setCurPage(1));
     setRefresh(e.target.value);
-    // e.target.value="";
   };
   function handleChangeW(e){
     dispatch(orderByWeight(e.target.value));
     dispatch(setCurPage(1));
     setRefresh(e.target.value);
-    // e.target.value="";
   };
  
   return (
     <div id={"orders2"}>
-
       <div>
         <label>{"Order by weight:"}</label>
         <select onChange={(e)=>{handleChangeW(e)}}>
@@ -42,7 +37,6 @@ export default function Orders({setRefresh}) {
           <option value={"z-a"}>Descendent</option>
         </select> 
       </div>
-
     </div>
   )
 }

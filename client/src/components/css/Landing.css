@@ -30,7 +30,11 @@
             border-radius: 2rem;
             height: 1.8rem;
             width: 7rem;
+            transition: all 0.5s;
           }
+        #landing_div_button button:hover{
+          transform: rotate(360deg);
+        }
 
       #landing_div_text{
         /* background-color: rgba(0, 0, 255, 0.665); */

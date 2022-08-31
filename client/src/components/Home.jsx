@@ -1,17 +1,17 @@
 import "./css/Home.css";
 import React, { useState } from 'react';
 import NavBar from "./NavBar.jsx";
-import SearchBar from "./SearchBar.jsx";
 import Orders from './Orders.jsx';
 import Filters from "./Filters.jsx";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getDogs, setCurPage } from '../redux/actions.js';
+import { getDogs, refreshDogs, setCurPage } from '../redux/actions.js';
 import { Link } from 'react-router-dom';
 import Card from "./Card.jsx";
 import Paginado from "./Paginado.jsx";
 import Loader from "./Loader";
 import Footer from "./Footer";
+import refresh_img from "./img/refresh4.png";
 
 
 
@@ -27,7 +27,7 @@ export default function Home() {
   const indexOfLastDog= curPage * dogsPerPage;
   const indexOfFirstDog= indexOfLastDog - dogsPerPage;
   const currentDogs= dogs.slice(indexOfFirstDog, indexOfLastDog);
-  const paginado=(numPage)=>{
+  const paginado=(numPage)=>{ 
     dispatch(setCurPage(numPage))
   };
   useEffect(()=>{
@@ -36,12 +36,16 @@ export default function Home() {
     }
   },[dispatch, dogs]);
 
-  
+  function handleRefresh(e){
+    dispatch(refreshDogs())
+  }
+
   return loader? <Loader/>:(
     <div id={"Home"}>
       <div><NavBar/></div>
       <div id={"optiondBar"}>
         <div id={"Orders"}><Orders setRefresh={setRefresh}/></div>
+        <div id={"home_option_bar_refresh"}><button onClick={(e)=> handleRefresh(e)}> <img src={refresh_img}alt={"refresh_img"} /></button></div>
         <div id={"Filters"}><Filters/></div>
       </div>
       <div id="greed">

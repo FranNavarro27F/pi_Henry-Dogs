@@ -2,3 +2,18 @@
     /* background-color: blueviolet; */
     visibility: hidden;
 }
+
+#searchbar_input_submite{
+    border-radius: 2rem;
+    transition: all 0.2s;
+}
+
+#searchbar_input_submite:hover{
+  
+}
+
+#searchbar_input_submite:active{
+    box-shadow: none;
+    height: 1.5rem;
+    border-style: double;
+}

@@ -5,14 +5,6 @@ import "./css/Card.css";
 export default function Card({img, id, name, weight_min, weight_max, temperament}) {
   let temp= temperament?.slice(0,9)
   
-
-//  let temp1= temperament?.map((cur,index)=> {
-//   if(index < 8){
-//     return cur;
-//   }
-//  })
-
- 
   return (
     <div id={"total_card"}>
       <div id={"the_card"}>

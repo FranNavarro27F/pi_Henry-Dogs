@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
 
-
 export default function Create() {
   const navigate = useNavigate();
   let dispatch= useDispatch();
@@ -23,7 +22,7 @@ export default function Create() {
       dispatch(visivility_searchBar(false))
       dispatch(getDogs())
     }
-  },[dispatch])
+  },[dispatch]);
 
   let [activ, setActiv]=useState(true);
   let [error, setError]=useState(null);
@@ -113,16 +112,12 @@ export default function Create() {
     if(input.temperament?.length >= 10){
       error.temperament="less than 10 temperaments";
     }
-    
     setError(error)
     handleDisable(error)
-    
-   
   }
 
   function handleSubmit(e){
-    e.preventDefault();
-  
+      e.preventDefault();
       dispatch(createDog(estado));
       setEstado({
         name:"",
@@ -134,13 +129,11 @@ export default function Create() {
       img:"",
       temperament:[]
       });
-
       alert("breed of dog created!!!")
       dispatch(getDogs())
       navigate("/home");
       dispatch(setCurPage(1))
-   
-  }
+  };
 
  function handleDisable(err){
   if(
@@ -156,13 +149,7 @@ export default function Create() {
   }else{
     setActiv(true);
   }
- }
- const estilos= {
-  ocultar:{
-    visibility: "hidden",
-  }
- }
-
+ };
 
   return (
     <div id={"all_create"}>
@@ -258,7 +245,7 @@ export default function Create() {
               return <TempCard
                        key={curID}
                        temp={temperaments[curID-1].name}
-                       id={curID}
+                       idTemp={curID}
                        estado={estado}
                        setEstado={setEstado}
                        inspector={inspector}

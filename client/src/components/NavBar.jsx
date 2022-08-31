@@ -11,11 +11,7 @@ export default function NavBar() {
         <div><Link to={"/home"}>🏠 Home</Link></div>
         <div><SearchBar/></div>
         <div><Link to={"/create"}>🐕‍🦺 Create</Link></div>
-        {/* <Link to={"/about"}><li>📜 About</li></Link> */}
       </div>
-      
-        
-      
     </div>
   )
 }

@@ -1,20 +1,18 @@
 import React from 'react';
 import "./css/TempCard.css";
 
-export default function TempCard({temp, setEstado, id, estado, inspector}) {
+export default function TempCard({temp, setEstado, idTemp, estado, inspector}) {
     
-    // let idTemp=id;
-
    function handle_delete_temp(e){
         setEstado({
             ...estado,
-            temperament:estado.temperament.filter(cur=> cur !== id)
+            temperament:estado.temperament.filter(cur=> cur !== idTemp)
         })
         inspector({
           ...estado,
-          temperament:estado.temperament.filter(cur=> cur !== id)
+          temperament:estado.temperament.filter(cur=> cur !== idTemp)
         })
-   }
+   };
 
   return (
     <div id={"tempCard"}>

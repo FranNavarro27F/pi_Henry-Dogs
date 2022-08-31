@@ -135,8 +135,16 @@ export function deleteCard(id){
                 })
             }
         } catch (e) {
-            alert("problems when we try to delete the card!")
+            alert("problems when we try to delete the dog!")
         }
 
     }
 };
+
+export function refreshDogs(){
+    return function (dispatch){
+        return dispatch({
+            type:"REFRESH_DOGS"
+        })
+    }
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import "./css/Footer.css";
 import img_git from"./img/icone-github.png";
 import img_linkedin from "./img/logo-linkedin.png";
-import {Link} from "react-router-dom";
 
 export default function Footer() {
   return (

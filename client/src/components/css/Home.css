@@ -68,12 +68,36 @@ input{
 #optiondBar select{
     border-radius: 1rem;
 }
-#home_div_footer{
-    /* background-color: pink */
-    /* display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 1.6rem;
-    border-width: 6px;
-    border-color: #ffffff; */
+#home_option_bar_refresh{
+    /* background-color: aqua; */
+    display: flex;
+}
+
+#home_option_bar_refresh button img{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 4rem;
+}
+
+#home_option_bar_refresh button{
+
+    background-color: #54BAB9;
+    border-radius: 5rem;
+    border-style: double;
+    border-color: #F7ECDE;
+    transition: all 0.6s;
+    cursor: pointer;    
+}
+
+#home_option_bar_refresh button:hover{
+    transform: rotate(360deg);
+    box-shadow: -0.5px -0.5px 6px;
+    /* border-color: #54BAB9; */
+}
+#home_option_bar_refresh button:active{
+    /* background-color:#9ED2C6; */
+    border-color: #54BAB9;
+    box-shadow: none;
+
+   
 }
