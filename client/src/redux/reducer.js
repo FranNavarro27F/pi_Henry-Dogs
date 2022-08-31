@@ -116,6 +116,16 @@ export default function rootReducer(state= initialState, action) {
             }    
         case "FILT_TEMPERAMENT":
             let auxDogs3=[...state.allDogs];
+            let auxDogsCurious=[...state.allDogs].filter(cur=> cur.temperament?.includes("Curious"));
+            let auxDogsWild=[...state.allDogs].filter(cur=> cur.temperament?.includes("Wild"))
+            let raros= auxDogsCurious.concat(auxDogsWild);
+            if(action.payload==="raros"){
+                return {
+                    ...state,
+                    dogs: raros
+                }
+            }
+
             return{
                 ...state,
                 dogs: action.payload==="default"?state.allDogs:auxDogs3.filter(cur=> cur.temperament?.includes(action.payload))

@@ -38,6 +38,7 @@ export default function Filters() {
         <label >Filt by Temperament:</label>
         <select onChange={(e)=>{handleChange(e)}}>
           <option value="default">Default</option>
+          <option value="raros">****Raros****</option>
          {
             Temp?.map(cur=>{
               return(
