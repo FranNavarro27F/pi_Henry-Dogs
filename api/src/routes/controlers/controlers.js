@@ -100,7 +100,7 @@ const getTemperaments= async ()=>{
         return temperament_db;
     }
 };
-getTemperaments()
+// getTemperaments()
 
 
 module.exports={
