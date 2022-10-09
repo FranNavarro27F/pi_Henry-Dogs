@@ -21,7 +21,19 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 const { getTemperaments } = require("./src/controllers/Temperaments/index.js");
- 
+const {
+  DB_USER,
+  DB_PASSWORD,
+  DB_HOST,
+  DB_NAME,
+  API_KEY,
+  
+  PGDATABASE,
+  PGHOST,
+  PGPORT,
+  PGUSER,
+  PGPASSWORD
+} = process.env;
 // Syncing all the models at once.
 conn.sync({ alter: true }).then( () => {
 
@@ -30,6 +42,13 @@ conn.sync({ alter: true }).then( () => {
     await getTemperaments();
     
     console.log(`++listening at ${process.env.PGPORT}++`); // eslint-disable-line no-console
+    console.log(
+      PGDATABASE,
+      PGHOST,
+      PGPORT,
+      PGUSER,
+      PGPASSWORD
+    )
   });
 });
  
