@@ -6,13 +6,14 @@ const {
   DB_USER,
   DB_PASSWORD,
   DB_HOST,
-  API_KEY,
   DB_NAME,
+  API_KEY,
+  
   PGDATABASE,
   PGHOST,
-  PGPASSWORD,
   PGPORT,
-  PGUSER
+  PGUSER,
+  PGPASSWORD
 } = process.env;
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`, {
