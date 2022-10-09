@@ -23,13 +23,13 @@ const { conn } = require('./src/db.js');
 const { getTemperaments } = require("./src/controllers/Temperaments/index.js");
  
 // Syncing all the models at once.
-conn.sync({ alter: true }).then( () => {  
+conn.sync({ alter: true }).then( () => {
 
   server.listen(process.env.PGPORT, async() => {
     
     await getTemperaments();
     
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log(`++listening at ${process.env.PGPORT}++`); // eslint-disable-line no-console
   });
 });
  
