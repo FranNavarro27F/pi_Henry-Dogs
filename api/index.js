@@ -22,18 +22,14 @@ const { conn } = require('./src/db.js');
 
 const { getTemperaments } = require("./src/controllers/Temperaments/index.js");
 const {
-  DB_USER,
-  DB_PASSWORD,
-  DB_HOST,
-  DB_NAME,
-  API_KEY,
-  
   PGDATABASE,
   PGHOST,
   PGPORT,
   PGUSER,
   PGPASSWORD
 } = process.env;
+//corroborando si las variables de entorno andan o no en deploy
+
 // Syncing all the models at once.
 conn.sync({ alter: true }).then( () => {
 
@@ -48,6 +44,7 @@ conn.sync({ alter: true }).then( () => {
       PGPORT,
       PGUSER,
       PGPASSWORD
+      
     )
   });
 });
