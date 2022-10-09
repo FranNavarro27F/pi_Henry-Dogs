@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const { Dog } = require("../../db.js");
 
-//importar controladores
 const { PostDogs, getNameBreeds, getDogs, getIdBreeds }= require("../../controllers/Dogs/index.js");
 
 

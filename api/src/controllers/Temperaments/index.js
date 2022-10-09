@@ -29,8 +29,6 @@ const getTemperaments= async ()=>{
 
 
 
-
-
 module.exports={
     getTemperaments
 }
