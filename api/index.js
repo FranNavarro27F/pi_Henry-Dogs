@@ -20,11 +20,12 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
-const { getTemperaments } = require("./src/routes/controlers/controlers");
-  
+const { getTemperaments } = require("./src/controllers/Temperaments/index.js");
+ 
 // Syncing all the models at once.
-conn.sync({ force: false}).then( () => {  
-  server.listen(process.env.PGPORT || 3001, async() => {
+conn.sync({ alter: true }).then( () => {  
+
+  server.listen(process.env.PGPORT, async() => {
     
     await getTemperaments();
     

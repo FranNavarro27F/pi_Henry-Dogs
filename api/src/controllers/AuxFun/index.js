@@ -1,4 +1,5 @@
 
+//--- acomoda informacion de la API  a --> fromato card para /home ------
 function prepDogCard(arr_dog_api){
     let dog_card=arr_dog_api.map(cur=> {
         let a=(cur.weight.metric.split("-")).map(cur=> Number(cur));
@@ -12,8 +13,10 @@ function prepDogCard(arr_dog_api){
        } 
     })
     return dog_card;
-}
+};
+//-----------------------------------------------------------------------x
 
+//----- acomoda infromacion de la API a --> formato detail para /detail---
 function prepDogDetail(arr_dog_api_1){
     let dog_Detail= arr_dog_api_1.map(cur=>{
         let a=(cur.weight.metric.split("-")).map(cur=> Number(cur));
@@ -32,8 +35,8 @@ function prepDogDetail(arr_dog_api_1){
         }
     })
     return dog_Detail;
-}
-
+};
+//-------------------------------------------------------------------------x
 
 
 module.exports={
