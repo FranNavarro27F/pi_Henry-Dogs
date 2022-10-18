@@ -29,15 +29,17 @@ const {
   PGPASSWORD
 } = process.env;
 //corroborando si las variables de entorno andan o no en deploy
+const PORT= 3001;
 
 // Syncing all the models at once.
 conn.sync({ alter: true }).then( () => {
 
-  server.listen(process.env.PGPORT, async() => {
+  server.listen(process.env.PGPORT || PORT, async () => {
     
     await getTemperaments();
+    const port= process.env.PGPORT ? process.env.PGPORT : PORT;
     
-    console.log(`++listening at ${process.env.PGPORT}++`); // eslint-disable-line no-console
+    console.log(`++listening at ${port}++`); // eslint-disable-line no-console
     console.log(
       PGDATABASE,
       PGHOST,
