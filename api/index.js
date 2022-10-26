@@ -34,7 +34,7 @@ const PORT= 3001;
 // Syncing all the models at once.
 conn.sync({ alter: true }).then( () => {
 
-  server.listen(process.env.PGPORT || PORT, async () => {
+  server.listen(process.env.PORT || PORT, async () => {
     
     await getTemperaments();
     const port= process.env.PGPORT ? process.env.PGPORT : PORT;
