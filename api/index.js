@@ -21,13 +21,7 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 const { getTemperaments } = require("./src/controllers/Temperaments/index.js");
-const {
-  PGDATABASE,
-  PGHOST,
-  PGPORT,
-  PGUSER,
-  PGPASSWORD
-} = process.env;
+
 //corroborando si las variables de entorno andan o no en deploy
 const PORT= 3001;
 
@@ -40,14 +34,7 @@ conn.sync({ alter: true }).then( () => {
     const port= process.env.PGPORT ? process.env.PGPORT : PORT;
     
     console.log(`++listening at ${port}++`); // eslint-disable-line no-console
-    console.log(
-      PGDATABASE,
-      PGHOST,
-      PGPORT,
-      PGUSER,
-      PGPASSWORD
-      
-    )
+    
   });
 });
  
