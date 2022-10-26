@@ -8,17 +8,6 @@ const {
   DB_HOST,
   DB_NAME,
   API_KEY,
-  
-  PGDATABASE,
-  PGHOST,
-  PGPORT,
-  PGUSER,
-  PGPASSWORD,
-
-
-  PORT,
-  PROJECT_PATH,
-  
   DATABASE_URL
 
 } = process.env;
