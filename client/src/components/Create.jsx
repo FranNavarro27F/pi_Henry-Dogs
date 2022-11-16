@@ -150,7 +150,7 @@ export default function Create() {
     setActiv(true);
   }
  };
-
+//------------------------------------recordar, modificar estetica de formulario Create-------------------
   return (
     <div id={"all_create"}>
       <div ><NavBar /></div>
